@@ -20,6 +20,8 @@ body {
   /* max-width: 1400px; */
 }
 
+
+
 .main-wrapper {
   display: flex;
   flex-direction: column;
@@ -29,6 +31,8 @@ body {
   width: 100%;
   height: 100%;
 }
+
+
 
 .grid-container-one,
 .grid-container-two {
