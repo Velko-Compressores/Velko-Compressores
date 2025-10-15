@@ -8,7 +8,7 @@ window.addEventListener("load", () => {
     document.body.removeChild(loader);
 
     // Redireciona para PaginaHome/index.html
-    window.location.href = "../Pagina_Home/index.html";
+    window.location.href = "../Home/index.html";
   });
 });
 
