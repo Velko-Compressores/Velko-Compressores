@@ -1,0 +1,115 @@
+
+html {
+  font-size: 62.5%;
+  overflow-x: hidden;
+  scroll-padding-top: 9rem;
+  scroll-behavior: smooth;
+}
+
+body {
+  background: #d0dbe1;
+  padding: 2rem;
+  margin: 0;
+  font-family: sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  gap: 2rem;
+  width: 100%;
+  /* max-width: 1400px; */
+}
+
+.main-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 5rem;
+  width: 100%;
+  height: 100%;
+}
+
+.grid-container-one,
+.grid-container-two {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 5rem;
+  width: 100%;
+}
+
+.card {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 1.5rem;
+  padding: 2rem;
+  border-radius: 2rem;
+  background-image: linear-gradient(to bottom left, #e0e4e5, #f2f6f9);
+  box-shadow:
+    inset -2px 2px hsl(0 0 100% / 1),
+    -20px 20px 40px hsl(0 0 0 / .25);
+  width: 500px;
+  box-sizing: border-box;
+  transition: all 0.3s ease;
+}
+
+.card img {
+  width: 200px;
+  height: auto;
+  border-radius: 1rem;
+  transition: all 0.3s ease;
+}
+
+.title {
+  font-size: 1.6rem;
+  text-transform: uppercase;
+  font-weight: 600;
+  word-break: break-word;
+  transition: all 0.3s ease;
+}
+
+
+
+/* ====== Versão Mobile: telas menores que 580px ====== */
+@media (max-width: 580px) {
+  html {
+    font-size: 55%;
+  }
+
+  body {
+    flex-direction: column;
+    padding: 1rem;
+  }
+
+  .main-wrapper {
+    gap: 1.5rem;
+    padding: 1rem;
+  }
+
+  .grid-container-one,
+  .grid-container-two {
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+  }
+
+  .card {
+    flex-direction: column;
+    width: 80%;
+    padding: 1.5rem;
+    text-align: center;
+  }
+
+  .card img {
+    width: 80%;
+    height: auto;
+  }
+
+  .title {
+    font-size: 1.8rem;
+    margin-top: 1rem;
+  }
+}
+
