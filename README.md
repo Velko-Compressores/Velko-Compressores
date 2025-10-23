@@ -28,7 +28,7 @@ Here are some ideas to get you started:
 - **CONTATO**
 -->
 
-
+<!--
 ## 🎯 Missão
 > Nosso compromisso é superar as expectativas dos nossos clientes, garantindo serviços de alta qualidade.
 
@@ -73,6 +73,6 @@ Here are some ideas to get you started:
 
 © Velko Compressores Ltda | Todos os direitos reservados
 
-
+-->
 
 
