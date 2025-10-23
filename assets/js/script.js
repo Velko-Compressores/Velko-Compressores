@@ -1,3 +1,6 @@
+
+/*===  inicio section resposiva  === */
+
 let navbar = document.querySelector('.navbar');
 
 document.querySelector('#menu-btn').onclick = () =>{
@@ -27,3 +30,9 @@ window.onscroll = () =>{
     searchForm.classList.remove('active');
     cartItem.classList.remove('active');
 }
+
+
+/*================================================================== */
+/*==============  Menu Dropdown section starts  ============== */
+/*================================================================== */
+
