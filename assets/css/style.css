@@ -347,6 +347,7 @@ section{
 /*===  paginas compressores / menu section starts  === */
 .menu{
     margin-top: 30PX;
+    padding-top: 100PX;
 }
 .menu .box-container{
     display: grid;
@@ -363,7 +364,7 @@ section{
 }
 
 .menu .box-container .box img{
-    height: 10rem;
+    height: 12rem;
 }
 
 .menu .box-container .box h3{
@@ -406,6 +407,7 @@ section{
     text-align: center;
     border:.1rem solid var(--cor-dourado);
     padding: 2rem;
+    border-radius: 5PX;
 }
 
 .products .box-container .box .icons a{
