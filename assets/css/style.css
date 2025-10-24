@@ -434,21 +434,22 @@ section{
 }
 
 .products .box-container .box .icons a:hover{
-    background:var(--cor-azul3)
+    background:var(--cor-azul3);
 }
 
 .products .box-container .box .image{
 
-    padding: 1.5rem 0;
+    padding: .5rem 0;
 }
 
-.products .box-container .box .image img{
+.products .box-container .box .content .image img{
     height: 25rem;
 }
 
 .products .box-container .box .content h3{
     color:var(--cor-azul2);
     font-size: 2.5rem;
+    padding-top: 2.5rem;
 }
 
 .products .box-container .box .content .stars{
