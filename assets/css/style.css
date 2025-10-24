@@ -84,6 +84,9 @@ section{
     letter-spacing: .2rem;
 }
 
+
+/*===  Inicio Header Section  === */
+
 .header{
     background: var(--cor-branco);
     display: flex;
@@ -129,7 +132,6 @@ section{
 }
 
 
-/*===  header section starts  === */
 .header .search-form{
     position: absolute;
     top:115%; right: 7%;
@@ -219,8 +221,10 @@ section{
     text-align: center;
 }
 
+/* -- Final Header Section  -- */
 
-/*===  home section starts  === */
+
+/*===  Inicio Home Section  === */
 
 .home{
     min-height: 80vh;
@@ -249,8 +253,10 @@ section{
     color:var(--cor-dourado);
 }
 
+/* -- Final Home Section  -- */
 
-/*===  sobre a velko/about section starts  === */
+
+/*===  Inicio About Section === */
 
 .about .row{
     display: flex;
@@ -285,8 +291,10 @@ section{
     line-height: 1.8;
 }
 
+/* -- Final About Section  -- */
 
-/*===  Nossos Serviços/blogs section starts  === */
+
+/*===  Inicio Blogs Section === */
 
 .blogs .box-container{
     display: grid;
@@ -354,8 +362,11 @@ section{
     padding:1rem 0;
 }
 
+/* -- Final Blogs Section  -- */
 
-/*===  paginas compressores / menu section starts  === */
+
+/*===  Inicio Menu Section === */
+
 .menu{
     margin-top: 30PX;
     padding-top: 100PX;
@@ -404,8 +415,10 @@ section{
     color:var(--cor-azul3);
 }
 
+/* -- Final Menu Section  -- */
 
-/*===  NOSSOS PRODUTOS/products section starts  === */
+
+/*===  Inicio Products Section === */
 
 .products .box-container{
     display: grid;
@@ -471,8 +484,11 @@ section{
     font-size: 1.5rem;
 }
 
+/* -- Final Products Section  -- */
 
-/*===  review section starts  === */
+
+/*===  Inicio Review Section === */
+
 /* 
 .review .box-container{
     display: grid;
@@ -511,7 +527,10 @@ section{
     color:var(--main-color);
 } */
 
-/*===  Entre em contato/contact section starts  === */
+/* -- Final Review Section  -- */
+
+
+/*===  Inicio Contact Section === */
 
 .contact .row{
     display: flex;
@@ -577,8 +596,10 @@ section{
     background:none;
 }
 
+/* -- Final Contact Section  -- */
 
-/*===  footer section starts  === */
+
+/*===  Inicio Footer Section === */
 
 .footer{
     background:var(--cor-branco);
@@ -634,9 +655,10 @@ section{
     color:var(--cor-azul2);
 }
 
+/* -- Final Footer Section  -- */
 
 
-/*===  Botão Flutuante do WhatsApp section starts  === */
+/*===  Inicio Botão Flutuante do WhatsApp Section === */
 
 .whatsapp-float {
     position: fixed;
@@ -663,8 +685,10 @@ section{
     transform: scale(1.1);
 }
 
+/* -- Final Botão Flutuante do WhatsApp Section Section  -- */
 
-/*===  media queries section starts  === */
+
+/*===  Inicio Media Queries Section === */
 
 @media (max-width:991px){
 
@@ -737,6 +761,19 @@ section{
 
 }
 
+/* -- Final Inicio Media Queries Section Section  -- */
+
+
+
+
+
+
+
+
+
+
+
+
 
 /*================================================================================================================ */
 
@@ -751,106 +788,6 @@ padding-top: 85rem;
     background-size: cover;
     background-position: center;
 }
-
-/* .home-compressor-alternativo .content-compressor-alternativo{
-
-
-
-} 
-
- */
-
-
-
-/*============================= Page Compressor Remanufaturado ===================================== */
-
-.home-compressor-remanufaturado{
-    min-height: 80vh;
-    /* background-color: var(--cor-dourado); */
-    padding-top: 150px;
-}
-
-.home-compressor-remanufaturado .content-compressor-remanufaturado{
-    display: flex;
-    /* align-items: center; */
-    justify-content: center;
-    /* background:var(--cor-branco); */
-    flex-wrap: wrap;
-    gap: 20px;
-}
-
-
-
-
-
-/*=== Secao menus dropdown compressor alternativo e compressor remanufaturado === */
-
-.mainmenubtn {
-  background-color:var(--cor-branco);
-  border: none;
-  padding: 10px;
-  border-radius: 4px;
-  cursor: pointer;
-}
-
-/* Tamanho padrão da imagem */
-.btn-iconhild {
-  width: 160px;
-  height: 160px;
-}
-
-
-/* Dropdown */
-.dropdown {
-  position: relative;
-  display: inline-block;
-}
-
-.dropdown-child {
-  display: none;
-  position: absolute;
-  background-color: #f9f9f9;
-  min-width: 160px;
-  box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
-  z-index: 1;
-  border-radius: 4px;
-}
-
-.dropdown-child a {
-  color: black;
-  padding: 10px 16px;
-  text-decoration: none;
-  text-align: center;
-  font-size: 3.2rem;
-  display: block;
-}
-
-.dropdown-child a:hover {
-  background-color: #f1f1f1;
-}
-
-/* Mostrar dropdown ao hover */
-.dropdown:hover .dropdown-child {
-  display: block;
-}
-
-/* Aumenta a imagem em telas menores (ex: celulares) */
-@media (max-width: 768px) {
-  .btn-iconhild {
-    width: 160px;
-    height: 160px;
-  }
-
-.dropdown-child a {
-  color: black;
-  padding: 10px 16px;
-  text-decoration: none;
-  text-align: center;
-  font-size: 2.2rem;
-  display: block;
-}
-}
-
 
 
 
