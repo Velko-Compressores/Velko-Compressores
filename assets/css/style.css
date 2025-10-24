@@ -372,10 +372,13 @@ section{
     text-align: center;
     border:.07rem solid var(--cor-azul1);   
     border-radius: 5px;   
+
+    border: .07rem solid rgba(204, 204, 204, 0.1);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); 
 }
 
 .menu .box-container .box img{
-    height: 12rem;
+    height: 25rem;
 }
 
 .menu .box-container .box h3{
@@ -397,13 +400,9 @@ section{
 }
 
 .menu .box-container .box:hover{
-    background:var(--cor-dourado)
+    background-color: rgba(204, 204, 204, 0.3);
+    color:var(--cor-azul3);
 }
-
-.menu .box-container .box:hover > *{
-    color:var(--cor-branco);
-}
-
 
 
 /*===  NOSSOS PRODUTOS/products section starts  === */
