@@ -259,10 +259,6 @@ section{
     background:var(--cor-branco);
     flex-wrap: wrap;
     padding: 25px;
-
-    border-radius: 5px;
-    border: .07rem solid rgba(204, 204, 204, 0.1);
-    box-shadow: 0 1px 19px rgba(0, 0, 0, 0.1); 
 }
 
 .about .row .image{
@@ -524,10 +520,6 @@ section{
     flex-wrap: wrap;
     gap:1rem;
     padding: 25px;
-
-    border-radius: 5px;
-    border: .07rem solid rgba(204, 204, 204, 0.1);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); 
 }
 
 .contact .row .map{
