@@ -30,7 +30,6 @@ html{
     font-size: 62.5%;
     overflow-x: hidden;
     scroll-padding-top: 9rem;
-    /* scroll-behavior: smooth; */
     scroll-behavior: auto;
 }
 
@@ -762,5 +761,25 @@ section{
 }
 
 /* -- Final Inicio Media Queries Section Section  -- */
+
+
+
+.home-compressor-alternativo {
+    padding-top: 150px;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+.content-compressor-alternativo {
+  /* flex: 2; */
+  overflow: hidden;
+  position: relative;
+}
+#tabela-img {
+  width: 100rem;
+  height: auto;
+  cursor: grab;
+}
+
 
 
