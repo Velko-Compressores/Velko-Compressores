@@ -1,11 +1,23 @@
-document.addEventListener('DOMContentLoaded', function () {
-  const image = document.getElementById('compressor-img');
-  const panzoom = Panzoom(image, {
-    maxScale: 5,
-    contain: 'outside'
-  });
-  image.parentElement.addEventListener('wheel', panzoom.zoomWithWheel);
-});
+
+    document.addEventListener('DOMContentLoaded', function () {
+      const image = document.getElementById('compressor-img');
+      const panzoom = Panzoom(image, {
+        minScale: 0.1,
+        maxScale: 1000,
+        contain: 'false',
+        canvas: true // permite arrastar livremente
+      });
+
+      // Zoom com roda do mouse
+      image.parentElement.addEventListener('wheel', panzoom.zoomWithWheel);
+    });
+
+
+
+
+
+
+
 
 function showInfo(part) {
   const info = {

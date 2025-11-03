@@ -1,22 +1,5 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-  <meta charset="UTF-8">
-  <title>Catálogo Técnico do Compressor</title>
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
-  <!-- <svg id="compressor-img" data-name="Camada 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 4317.87 3244.64"></svg> -->
-
-  <!-- <a href="ok.html" target="_blank"><text class="cls-2" transform="translate(883.86 3032.13)"><tspan x="0" y="0">1</tspan></text></a> -->
-
-<!-- <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 4384.8 3153.6"></svg> -->
-  
-<div class="container">
-<div id="image-container">
-
 <?xml version="1.0" encoding="UTF-8"?>
-<svg id="compressor-img" data-name="Camada 2" svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 4384.8 3153.6"> 
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 4384.8 3153.6">
   <defs>
     <style>
       .cls-1, .cls-2, .cls-3, .cls-4, .cls-5, .cls-6, .cls-7, .cls-8, .cls-9, .cls-10 {
@@ -1005,36 +988,3 @@
     </g>
   </g>
 </svg>
-
-
-
-<!-- <a href="ok.html" target="_blank"><text class="cls-2" transform="translate(883.86 3032.13)"><tspan x="0" y="0">1</tspan></text></a> -->
-
-</div>
-
-
-    <!-- <div id="info-panel">
-      <h2>Informações da Peça</h2>
-      <div id="info-content">Clique em uma área da imagem para ver os detalhes da peça.</div>
-    </div> -->
-
-
-</div>
-
-  <!-- Panzoom via CDN -->
-  <script src="https://unpkg.com/@panzoom/panzoom/dist/panzoom.min.js"></script>
-
-
-  <script src="script.js"></script>
-</body>
-</html>
-
-
-
-      <!-- <img src="CE3.svg" usemap="#compressor-map" id="compressor-img" alt="Compressor Técnico"> -->
-      <!-- <div class="marker" style="left: 100px; top: 100px;">Motor</div>
-      <div class="marker" style="left: 250px; top: 100px;">Válvula</div> -->
-      <!-- <map name="compressor-map">
-        <area shape="rect" coords="100,100,200,200" href="#" alt="Motor" onclick="showInfo('motor')">
-        <area shape="rect" coords="250,100,350,200" href="#" alt="Válvula" onclick="showInfo('valvula')">
-      </map> -->

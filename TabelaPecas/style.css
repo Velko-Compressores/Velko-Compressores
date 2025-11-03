@@ -30,7 +30,6 @@ html{
     font-size: 62.5%;
     overflow-x: hidden;
     scroll-padding-top: 9rem;
-    /* scroll-behavior: smooth; */
     scroll-behavior: auto;
 }
 
@@ -59,7 +58,7 @@ section{
     text-align: center;
     color:var(--cor-azul1);
     text-transform: uppercase;
-    padding-bottom: 3.5rem;
+    /* padding-bottom: 3.5rem; */
     font-size: 4rem;
 }
 
@@ -693,7 +692,7 @@ section{
 @media (max-width:991px){
 
     html{
-        font-size: 60%;
+        font-size: 55%;
     }
 
     .header{
@@ -701,7 +700,7 @@ section{
     }
 
     section{
-        padding:2rem;
+        /* padding:5rem; */
     }
 
 }
@@ -759,13 +758,73 @@ section{
         font-size: 50%;
     }
 
-    .heading{
-        font-size: 3.5rem;
-    }
-    
-
 }
 
 /* -- Final Inicio Media Queries Section Section  -- */
+
+
+
+ .home-pecas {
+    background-color: #f7f4f4b0;
+    /* display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100vh; */
+
+    
+  background-color: #f7f4f4b0;
+  /* display: flex;
+  flex-direction: column;
+  justify-content: center; */
+  height: 100vh;
+  padding-top: 150px; /* espaço interno abaixo do header */
+  box-sizing: border-box;
+
+}
+.content-pecas {
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
+    position: relative;
+}
+#tabela-img {
+  width: 100rem;
+  height: auto;
+  cursor: grab;
+}
+
+
+
+
+/* .home-pecas {
+      margin: 0;
+      padding: 0;
+      height: 100vh;
+      width: 100vw;
+      display: flex;
+      justify-content: center; 
+      align-items: center;
+      background-color: #c9c7c7;
+}
+
+.content-pecas {
+      background-color: #f7f4f4;
+      width: 90vw;
+      height: 90vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+      position: relative;
+    }
+
+    #tabela-img {
+      max-width: 90%;
+      max-height: 90%;
+      height: auto;
+      width: auto;
+      display: block;
+      touch-action: none;
+    } */
 
 

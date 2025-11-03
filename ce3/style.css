@@ -1,40 +1,32 @@
-body {
-  font-family: Arial, sans-serif;
-  margin: 0;
-  padding: 0;
-}
-.container {
-  display: flex;
-  flex-direction: row;
-  height: 100vh;
-}
-#image-container {
-  flex: 2;
-  overflow: hidden;
-  position: relative;
-}
-#compressor-img {
-  width: 100%;
-  height: auto;
-  cursor: grab;
-}
-#info-panel {
-  flex: 1;
-  padding: 20px;
-  background-color: #f4f4f4;
-  border-left: 1px solid #ccc;
-}
-#info-content {
-  margin-top: 10px;
-}
 
-.marker {
-  position: absolute;
-  color: red;
-  font-weight: bold;
-  background-color: rgba(255,255,255,0.7);
-  padding: 2px 4px;
-  border: 1px solid red;
-  border-radius: 3px;
-  pointer-events: none;
-}
+    body, html {
+      margin: 0;
+      padding: 0;
+      height: 100vh;
+      width: 100vw;
+      display: flex;
+      justify-content: center; /* Centraliza horizontalmente */
+      align-items: center;     /* Centraliza verticalmente */
+      background-color: #ffffff;
+    }
+
+    #image-container {
+      background-color: #f7f4f4;
+      width: 90vw;
+      height: 90vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+      position: relative;
+    }
+
+    #tabela-img {
+      max-width: 90%;
+      max-height: 90%;
+      height: auto;
+      width: auto;
+      display: block;
+      touch-action: none;
+    }
+
