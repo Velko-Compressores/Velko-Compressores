@@ -9,6 +9,7 @@ document.addEventListener('DOMContentLoaded', function () {
   image.parentElement.addEventListener('wheel', panzoom.zoomWithWheel);
 });
 
+
 function showInfo(part) {
   const info = {
     motor: "<strong>Motor Embutido</strong><br>Artigo: 1001<br>Peso: 12kg<br>Ano: 2020",
