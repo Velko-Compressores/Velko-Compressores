@@ -32,6 +32,13 @@ html{
     scroll-padding-top: 9rem;
     /* scroll-behavior: smooth; */
     scroll-behavior: auto;
+
+    height: 90vh;
+    width: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #ffffff;
 }
     
 
@@ -193,24 +200,30 @@ body, html {
 } 
 */
 
-#image-container {
-  background-color: #ffffff;
-  width: 90vw;
-  height: 90vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  overflow: hidden;
-  position: relative;
+.container {
+    /* padding-top: 200px; */
 }
 
-#tabela-img {
-  max-width: 90%;
-  max-height: 90%;
-  height: auto;
-  width: auto;
-  display: block;
-  touch-action: none;
+
+#image-container {
+    padding-top: 200px;
+    background-color: #ffffff;
+    width: 90vw;
+    height: 90vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    position: relative;
+}
+
+#compressor-img {
+    max-width: 130rem;
+    max-height: 130rem;
+    height: auto;
+    width: auto;
+    display: block;
+    touch-action: none;
 }
 
 
