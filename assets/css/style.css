@@ -81,7 +81,7 @@ section{
 }
 
 .btn:hover{
-    letter-spacing: .2rem;
+    background-color: var(--cor-azul2);
 }
 
 
