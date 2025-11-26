@@ -47,40 +47,6 @@ body{
     background: var(--cor-branco);
 }
 
-section{
-    padding:5rem 7%;
-}
-
-.heading{
-    text-align: center;
-    color:var(--cor-azul1);
-    text-transform: uppercase;
-    padding-bottom: 3.5rem;
-    font-size: 4rem;
-}
-
-.heading span{
-    color:var(--cor-azul2);
-    text-transform: uppercase;
-}
-
-.btn{
-    margin-top: 1rem;
-    display: inline-block;
-    padding: 1.1rem 5rem;
-    font-size: 2.1rem;
-    font-weight: 700;
-    border-radius: 5px;
-    color:var(--cor-branco);
-    background: var(--cor-azul1);
-    cursor: pointer;
-}
-
-.btn:hover{
-    background-color: var(--cor-azul2);
-}
-
-
 /* =========================
    LAYOUT RESPONSIVO
 ========================= */
@@ -96,6 +62,10 @@ section{
     html { font-size: 50%; }
     section { padding: 1rem 3%; }
 }
+
+
+
+
 
 /* =========================
    HEADER COMPLETO E RESPONSIVO
@@ -125,6 +95,7 @@ section{
 .header .navbar {
     transition: right 0.3s ease;
 }
+
 
 /* Navbar com UL/LI */
 .header .navbar ul {
@@ -291,338 +262,221 @@ section{
     }
 }
 
-/* -- Final Header Section  -- */
 
+/* =========================
+   SEÇÃO ABOUT
+========================= */
 
-/*===  Inicio Home Section  === */
-
-.home{
-    min-height: 80vh;
-    display: flex;
-    align-items: center;
-    background:url(../images/home-img.png) no-repeat;
-    background-size: cover;
-    background-position: center;
+.table-wrapper {
+    max-height: 500px; /* altura fixa para a área da tabela */
+    overflow-y: auto; /* rolagem interna */
+    margin-bottom: 20px;
+    border-radius: 6px;
+    border: 1px solid #ddd;
 }
 
-.home .content{
-    max-width: 60rem;
+/* Mantém cabeçalho fixo */
+.cart-table thead {
+    position: sticky;
+    top: 0;
+    background-color: var(--cor-azul1);
+    color: var(--cor-branco);
+    z-index: 2;
 }
 
-.home .content h3{
-    font-size: 5rem;
-    text-transform: uppercase;
-    color:var(--cor-azul1);
-}
-
-.home .content p{
-    font-size: 2rem;
-    font-weight: lighter;
-    line-height: 1.8;
-    padding:1rem 0;
-    color:var(--cor-dourado);
-}
-
-/* -- Final Home Section  -- */
-
-
-/*===  Inicio About Section === */
-
-.about .row{
-    display: flex;
-    align-items: center;
-    flex-direction: row;
-    background:var(--cor-branco);
-    flex-wrap: wrap;
-    padding: 25px;
-}
-
-.about .row .image{
-    flex:1 1 45rem;
-}
-
-.about .row .image img{
+.about {
     width: 100%;
-}
-.about .row .content{
-    flex:1 1 45rem;
-    padding:2rem;
-}
-
-.about .row .content h3{
-    font-size: 3rem;
-    color:var(--cor-azul2);
-}
-
-.about .row .content p{
-    font-size: 1.9rem;
-    color:var(--cor-dourado);
-    padding:1rem 0;
-    line-height: 1.8;
-}
-
-/* -- Final About Section  -- */
-
-
-/*===  Inicio Blogs Section === */
-
-.blogs .box-container{
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
-    gap:1.5rem;
-}
-
-.blogs .box-container .box{
-    border-radius: 5px;
-    border: .07rem solid rgba(204, 204, 204, 0.1);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); 
-}
-
-.blogs .box-container .box .image{
-    height: 1rem;
-    overflow:hidden;
-    width: 1%;
-    border-radius: 5px;
-}
-
-.blogs .box-container .box .image img{
-    /* height: 100%; */
-    object-fit: cover;
-    /* width: 100%; */
-    border-radius: 5px;
-}
-
-.blogs .box-container .box:hover .image img{
-    transform: scale(1.2);
-}
-
-.blogs .box-container .box .content{
+    min-height: calc(100vh - 9.5rem); /* ocupa toda a tela menos a navbar */
+    margin-top: 9.5rem; /* compensação da navbar fixa */
+    padding: 2rem 7%;
+    background: var(--cor-branco);
     display: flex;
-    flex-direction: column; /* mantém os elementos empilhados verticalmente */
-    justify-content: center; /* alinha verticalmente */
-    align-items: center; /* alinha horizontalmente */
-    text-align: center; /* centraliza o texto */
-    height: 100%; /* ou defina uma altura fixa, ex: 300px */
-    padding: 2rem;
-
+    flex-direction: column;
+    justify-content: center;
 }
 
-.blogs .box-container .box .content .title{
-    font-weight: 700;
+.about .row {
+    display: flex;
+    gap: 2rem;
+    align-items: stretch;
+    justify-content: space-between;
+    height: 100%;
+}
+
+/* Conteúdo (mantendo suas configs) */
+.content {
+    flex: 1; /* menor proporção */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background: var(--cor-branco);
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.section-title {
     font-size: 2.5rem;
-    line-height: 1.5;
-    color:var(--cor-azul1)
+    color: var(--cor-azul1);
+    margin-bottom: 15px;
+    text-align: center;
 }
 
-.blogs .box-container .box .content .title:hover{
-    color:var(--cor-azul2);
+/* Tabela */
+.table-wrapper {
+    flex: 1;
+    overflow-y: auto;
+    margin-bottom: 20px;
+    border-radius: 6px;
 }
 
-.blogs .box-container .box .content span{
-    color:var(--main-color);
-    display: block;
-    padding-top: 1rem;
-    font-size: 2rem;
+.cart-table {
+    width: 100%;
+    border-collapse: collapse;
 }
 
-.blogs .box-container .box .content p{
+.cart-table thead {
+    background-color: var(--cor-azul1);
+    color: var(--cor-branco);
+    position: sticky;
+    top: 0;
+    text-align: center;
+}
+
+.cart-table th,
+.cart-table td {
+    padding: 12px;
+    font-size: 1.5rem;
+    text-align: center;
+    border-bottom: 1px solid #ddd;
+}
+
+/* Remove cores alternadas */
+.cart-table tbody tr:nth-child(odd),
+.cart-table tbody tr:nth-child(even) {
+    background-color: var(--cor-branco); /* tudo branco */
+}
+
+/* Botão */
+.btn {
+    display: inline-block;
+    padding: 12px;
+    background-color: var(--cor-azul1);
+    color: var(--cor-branco);
     font-size: 1.6rem;
-    line-height: 1.8;
-    color:#ccc;
-    padding:1rem 0;
+    font-weight: bold;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: 100%;
 }
 
-/* -- Final Blogs Section  -- */
-
-
-/*===  Inicio Menu Section === */
-
-.menu{
-    margin-top: 30PX;
-    padding-top: 100PX;
-}
-.menu .box-container{
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
-    gap:1.5rem;
+.btn:hover {
+    background-color: var(--cor-azul2);
 }
 
-.menu .box-container .box{
-    background:var(--cor-branco);
-    padding:5rem;
-    text-align: center;
-    border:.07rem solid var(--cor-azul1);   
-    border-radius: 5px;   
-
-    border: .07rem solid rgba(204, 204, 204, 0.1);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); 
+/* SVG Wrapper */
+.svg-wrapper {
+    flex: 2; /* imagem ocupa o dobro do espaço */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: var(--cor-branco);
+    border-radius: 8px;
+    padding: 10px;
 }
 
-.menu .box-container .box img{
-    height: 25rem;
+#compressor-img {
+    width: 100%;
+    max-width: 90rem; /* aumenta limite para imagem */
+    height: auto;
+    display: block;
 }
 
-.menu .box-container .box h3{
-    color: var(--cor-azul1);
-    font-size: 2rem;
-    padding:1rem 0;
+/* === Configuração do Content/Carrinho Itens === */
+
+/* 1. Botões (+/-) com cores e hover */
+.quantity-controls button {
+    border: none;
+    font-size: 1.6rem;
+    font-weight: bold;
+    width: 36px;
+    height: 36px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    color: #fff;
 }
 
-.menu .box-container .box .price{
-    color: var(--cor-azul2);
-    font-size: 2.5rem;
-    padding:.5rem 0;
+/* Botão diminuir (-) */
+.quantity-controls .decrease {
+    background-color: #f87d6f; /* vermelho */
+}
+.quantity-controls .decrease:hover {
+    background-color: #c0392b;
+    transform: scale(1.1);
 }
 
-.menu .box-container .box .price span{
-    font-size: 1.5rem;
-    text-decoration: line-through;
-    font-weight: lighter;
+/* Botão aumentar (+) */
+.quantity-controls .increase {
+    background-color: #82fdb6; /* verde */
+}
+.quantity-controls .increase:hover {
+    background-color: #1e8449;
+    transform: scale(1.1);
 }
 
-.menu .box-container .box:hover{
-    background-color: rgba(204, 204, 204, 0.3);
-    color:var(--cor-azul3);
-}
-
-/* -- Final Menu Section  -- */
-
-
-/*===  Inicio Products Section === */
-
-.products .box-container{
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
-    gap:1.5rem;
-}
-
-.products .box-container .box{
-    text-align: center;
-    padding: 2rem;
-    border-radius: 5px;
-    border: .07rem solid rgba(204, 204, 204, 0.1);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-
-}
-
-.products .box-container .box .icons a{
-    height: 2rem;
-    width: 1rem;
-    line-height: 5rem;
-    font-size: 2rem;
-    border:.1rem solid var(--cor-dourado);
-    color:var(--cor-azul2);
-    margin:.3rem;
-}
-
-.products .box-container .box .icons a:hover{
-    background:var(--cor-azul3);
-}
-
-.products .box-container .box .image{
-
-    padding: .5rem 0;
-}
-
-.products .box-container .box .content .image img{
-    height: 25rem;
-}
-
-.products .box-container .box .content h3{
-    color:var(--cor-azul2);
-    font-size: 2.5rem;
-    padding-top: 2.5rem;
-}
-
-.products .box-container .box .content .stars{
-    padding: 1.5rem;
-}
-
-.products .box-container .box .content .stars i{
-    font-size: 1.7rem;
-    color: var(--cor-azul3);
-}
-
-.products .box-container .box .content .price{
-    color:var(--cor-azul2);
-    font-size: 2.5rem;
-}
-
-.products .box-container .box .content .price span{
-    text-decoration: line-through;
-    font-weight: lighter;
-    font-size: 1.5rem;
-}
-
-/* -- Final Products Section  -- */
-
-/*===  Inicio Contact Section === */
-
-.contact .row{
+/* Espaçamento entre botões e número */
+.quantity-controls {
     display: flex;
     align-items: center;
-    background:var(--cor-branco);
-    flex-wrap: wrap;
-    gap:1rem;
-    padding: 25px;
+    justify-content: center;
+    gap: 10px;
 }
 
-.contact .row .map{
-    flex:1 1 45rem;
-    width: 100%;
+/* 2. Imagem com bordas e efeito hover */
+.cart-img {
+    width: 80px;
+    height: 80px;
     object-fit: cover;
+    border-radius: 8px;
+    border: 2px solid #ddd;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.cart-img:hover {
+    transform: scale(1.1);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
 }
 
-.contact .row form{
-    flex:1 1 45rem;
-    padding:5rem 2rem;
-    text-align: center;
-}
-
-.contact .row form h3{
-    /* text-transform: uppercase; */
-    font-size: 2.5rem;
-    color:var(--cor-azul1)
-}
-
-.contact .row form .inputBox{
-    display: flex;
-    align-items: center;
-    margin-top: 2rem;
-    margin-bottom: 2rem;
-    background:var(--cor-branco);
-    border:.1rem solid var(--cor-dourado);
-    border-radius: 5px;
-    border: .07rem solid rgba(204, 204, 204, 0.1);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-
-}
-
-.contact .row form .inputBox span{
-    color:var(--cor-azul1);
-    font-size: 2rem;
-    padding-left: 2rem;
-}
-
-.contact .row form .inputBox input{
-    width: 100%;
-    padding:2rem;
-    font-size: 1.7rem;
+/* 3. Nome do item em negrito */
+.cart-table td:first-child {
+    font-weight: bold;
+    font-size: 1.6rem;
     color: var(--cor-azul1);
-    text-transform: none;
-    background:none;
 }
 
-.contact .row form .inputBox textarea{
-    width: 100%;
-    padding:2rem;
-    font-size: 1.7rem;
-    color: var(--cor-azul1);
-    text-transform: none;
-    background:none;
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .about {
+        min-height: auto; /* remove altura fixa */
+        margin-top: 9.5rem;
+    }
+    .about .row {
+        flex-direction: column-reverse; /* imagem acima do conteúdo */
+        gap: 2rem;
+    }
+    .svg-wrapper,
+    .content {
+        width: 100%;
+    }
+    #compressor-img {
+        max-width: 100%;
+    }
 }
 
-/* -- Final Contact Section  -- */
 
 
 /*===  Inicio Footer Section === */
@@ -712,5 +566,61 @@ section{
 }
 
 /* -- Final Botão Flutuante do WhatsApp Section Section  -- */
+
+
+/*===  Inicio Modal === */
+
+.modal {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: rgba(0,0,0,0.7);
+    display: none; 
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+}
+
+.modal-content {
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+    position: relative;
+    max-width: 600px;
+    width: 90%; 
+}
+
+.close-btn {
+    position: absolute;
+    top: 10px; right: 20px;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.modal img {
+    max-width: 500px;
+    margin-bottom: 10px;
+}
+
+#modal-info {
+    font-size: 1.7rem;
+    color: #333;
+    margin-top: 10px;
+}
+
+@media (max-width: 768px) {
+    .modal-content {
+        max-width: 90%;
+        padding: 15px;
+    }
+
+    .modal img {
+        max-width: 200px;
+        margin-bottom: 5px;
+    }
+} 
+
+/*===  Final Modal === */
 
 
