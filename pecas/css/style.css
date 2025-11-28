@@ -424,3 +424,80 @@ section{
 
 /* -- Final Botão Flutuante do WhatsApp Section Section  -- */
 
+
+/*===  Inicio do modal para escolher o modelo do motor === */
+
+.modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  justify-content: center;
+  align-items: center;
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+.modal-content {
+  position: relative; /* Adicionado */
+  background: #fff;
+  padding: 25px;
+  border-radius: 12px;
+  width: 90%;
+  max-width: 400px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+  text-align: center;
+  animation: slideDown 0.4s ease;
+}
+
+.modal-content h2 {
+    font-size: 25px;
+    margin-bottom: 15px;
+    color: var(--cor-azul1);
+}
+
+.close {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  font-size: 24px;
+  font-weight: bold;
+  color: var(--cor-azul1);
+  cursor: pointer;
+}
+
+#modal-links a {
+  display: block;
+  margin: 10px 0;
+  padding: 10px;
+  background-color: var(--cor-azul1);
+  color: #fff;
+  font-size: 25px;
+  text-decoration: none;
+  border-radius: 6px;
+  transition: background-color 0.3s ease;
+}
+
+#modal-links a:hover {
+  background-color: var(--cor-azul2);
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideDown {
+  from { transform: translateY(-50px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+/* Responsividade */
+@media (max-width: 480px) {
+  .modal-content {
+    width: 95%;
+    padding: 20px;
+  }
+}

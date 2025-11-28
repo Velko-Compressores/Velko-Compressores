@@ -46,3 +46,33 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 
+/*===  inicio do modal para escolher o modelo do motor  === */
+
+const modal = document.getElementById('modal');
+const modalLinksContainer = document.getElementById('modal-links');
+const closeBtn = document.querySelector('.close');
+
+document.querySelectorAll('.svg-link').forEach(link => {
+  link.addEventListener('click', e => {
+    e.preventDefault();
+
+    // Gerar links com os caminhos corretos fornecidos pelo usuário
+    modalLinksContainer.innerHTML = `
+      <a href="CE3-4FES-3/index.html">4FES-3</a>
+      <a href="CE3-4FES-5/index.html">4FES-5</a>
+      <a href="CE3-4FC3.2/index.html">4FC-3.2</a>
+      <a href="CE3-4FC5.2/index.html">4FC-5.2</a>
+    `;
+
+    modal.style.display = 'flex';
+  });
+});
+
+closeBtn.addEventListener('click', () => {
+  modal.style.display = 'none';
+});
+
+window.addEventListener('click', e => {
+  if (e.target === modal) modal.style.display = 'none';
+});
+
