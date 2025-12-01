@@ -14,6 +14,11 @@
     --cor-branco:rgb(255, 255, 255);
     --cor-preto:rgb(0, 0, 0);
     --cor-dourado:rgb(204, 204, 204);
+    --cor-red1: rgb(248, 125, 111);
+    --cor-red2: rgb(192, 57, 43);
+    --cor-green1: rgb(130, 253, 182);
+    --cor-green2: rgb(30, 132, 73);
+
 }
 
 *{
@@ -623,4 +628,78 @@ body{
 
 /*===  Final Modal === */
 
+
+/*===  Inicio Modal para Finalizar Compra === */
+/* Overlay do modal */
+#checkout-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+
+/* Conteúdo do modal */
+#checkout-modal .modal-content {
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    width: 350px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    font-family: Arial, sans-serif;
+}
+
+/* Título */
+#checkout-modal h3 {
+    margin-bottom: 15px;
+    font-size: 20px;
+    color: var(--cor-azul1)
+}
+
+/* Inputs */
+#checkout-modal input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 12px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 14px;
+}
+
+/* Botões */
+#checkout-modal button {
+    width: 48%;
+    padding: 10px;
+    margin: 5px 1%;
+    border: none;
+    border-radius: 6px;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+#confirm-checkout {
+    background-color: var(--cor-green1);
+    color: var(--cor-branco);
+}
+
+#confirm-checkout:hover {
+    background-color: var(--cor-green2);
+}
+
+#close-checkout {
+    background-color: var(--cor-red1);
+    color: var(--cor-branco);
+}
+
+#close-checkout:hover {
+    background-color: var(--cor-red2);
+}
+
+/*===  Final Modal para Finalizar Compra === */
 

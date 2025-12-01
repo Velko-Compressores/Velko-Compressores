@@ -171,7 +171,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // Fechar modal
+    // Inicio Fechar modal
     closeBtn.addEventListener('click', () => {
         modal.style.display = 'none';
     });
@@ -181,18 +181,63 @@ document.addEventListener('DOMContentLoaded', () => {
             modal.style.display = 'none';
         }
     });
+    // Fim Fechar modal
 
-    purchaseButton.addEventListener('click', () => {
-        if (cart.length === 0) {
-            alert('Seu carrinho está vazio!');
-        } else {
-            alert('Compra finalizada com sucesso!');
-            cart = [];
-            renderCart();
-        }
-    });
+    // Inicio Finalizar a compra
+    // purchaseButton.addEventListener('click', () => {
+    //     if (cart.length === 0) {
+    //         alert('Seu carrinho está vazio!');
+    //     } else {
+    //         alert('Compra finalizada com sucesso!');
+    //         cart = [];
+    //         renderCart();
+    //     }
+    // });
+
+
+purchaseButton.addEventListener('click', () => {
+    if (cart.length === 0) {
+        alert('Seu carrinho está vazio!');
+    } else {
+        // Exibe modal para dados do cliente
+        document.getElementById('checkout-modal').style.display = 'flex';
+    }
+});
+
+// Fechar modal ao clicar em "Cancelar"
+document.getElementById('close-checkout').addEventListener('click', () => {
+    document.getElementById('checkout-modal').style.display = 'none';
+});
+
+
+// apos os dados preenchidos envia a lista de compras por email
+document.getElementById('confirm-checkout').addEventListener('click', () => {
+    const name = document.getElementById('user-name').value.trim();
+    const email = document.getElementById('user-email').value.trim();
+    const phone = document.getElementById('user-phone').value.trim();
+
+    if (!name || !email || !phone) {
+        alert('Por favor, preencha todos os campos!');
+        return;
+    }
+
+    const itemsList = cart.map(item => `${item.name} (Qtd: ${item.quantity})`).join('\n');
+    const message = `Pedido:\n${itemsList}\n\nDados do cliente:\nNome: ${name}\nE-mail: ${email}\nTelefone: ${phone}`;
+
+    // assunto do e-mail
+    const mailtoLink = `mailto:diegojfsr@gmail.com?subject=Novo Pedido - ${encodeURIComponent(name)}&body=${encodeURIComponent(message)}`;
+    window.location.href = mailtoLink;
+
+    // Limpa carrinho e fecha modal
+    cart = [];
+    localStorage.removeItem('cart');
+    renderCart();
+    document.getElementById('checkout-modal').style.display = 'none';
 });
 
 
 
+
+
+});
 
