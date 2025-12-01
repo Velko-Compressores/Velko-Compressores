@@ -219,8 +219,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
         // assunto do e-mail
-        const mailtoLink = `mailto:diegojfsr@gmail.com?subject=Novo Pedido - ${encodeURIComponent(name)}&body=${encodeURIComponent(message)}`;
-        window.location.href = mailtoLink;
+        // const mailtoLink = `mailto:diegojfsr@gmail.com?subject=Novo Pedido - ${encodeURIComponent(name)}&body=${encodeURIComponent(message)}`;
+        // window.location.href = mailtoLink;
+
+        const whatsappNumber = '5521967208702'; 
+        const whatsappLink = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
+        window.open(whatsappLink, '_blank');
 
         // Limpa carrinho e fecha modal
         cart = [];
