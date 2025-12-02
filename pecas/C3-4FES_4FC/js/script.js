@@ -97,7 +97,9 @@ document.addEventListener('DOMContentLoaded', () => {
         76: { name: 'CJ BUJÃO C/ARRUELA VEDAÇÃO - M20 X 1,5 C3/CE3 C4/CE4', image: 'images/76 - Sealing screw.png', description: 'Descrição do item.' },
         80: { name: 'CJ MONITORADOR NÍVEL ÓLEO - OLC-K1 220V 50/60Hz', image: 'images/80.1 - Opto-electronic unit.png', description: 'Descrição do item.' },
         91: { name: 'BUJÃO - 1/8"NPTF', image: 'images/91 - Plug.png', description: 'Descrição do item.' },
-        92: { name: 'BUJÃO - 1/4"NPTF', image: 'images/92 - Schrader valve.png', description: 'Descrição do item.' }
+        92: { name: 'BUJÃO - 1/4"NPTF', image: 'images/92 - Schrader valve.png', description: 'Descrição do item.' },
+        130: { name: 'Cylinder liner - left', image: 'images/130- Cylinder liner - left.png', description: 'Descrição do item.' },
+        140: { name: 'Cylinder liner - right', image: 'images/140 - Cylinder liner - right.png', description: 'Descrição do item.' }
     };
 
     function renderCart() {
