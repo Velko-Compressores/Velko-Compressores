@@ -1,5 +1,6 @@
 
 /*===  inicio section resposiva  === */
+
 let navbar = document.querySelector('.navbar');
 
 document.querySelector('#menu-btn').onclick = () =>{
@@ -7,10 +8,33 @@ document.querySelector('#menu-btn').onclick = () =>{
     searchForm.classList.remove('active');
     cartItem.classList.remove('active');
 }
-/*===  Final Section Resposiva  === */
 
+// let searchForm = document.querySelector('.search-form');
 
-/*===  Inicio section para arrastar livremente  === */
+// document.querySelector('#search-btn').onclick = () =>{
+//     searchForm.classList.toggle('active');
+//     navbar.classList.remove('active');
+//     cartItem.classList.remove('active');
+// }
+
+// let cartItem = document.querySelector('.cart-items-container');
+
+// document.querySelector('#cart-btn').onclick = () =>{
+//     cartItem.classList.toggle('active');
+//     navbar.classList.remove('active');
+//     searchForm.classList.remove('active');
+// }
+
+// window.onscroll = () =>{
+//     navbar.classList.remove('active');
+//     searchForm.classList.remove('active');
+//     cartItem.classList.remove('active');
+// }
+
+/*===  Final section resposiva  === */
+
+/*===  inicio section para arrastar livremente  === */
+
 document.addEventListener('DOMContentLoaded', function () {
     const image = document.getElementById('compressor-img');
     const panzoom = Panzoom(image, {
@@ -28,24 +52,16 @@ document.addEventListener('DOMContentLoaded', function () {
 /*==============  Inicio function para adicionar produtos no carrinho lateral  ============== */
 /*====================================================================================== */
 
-// js/page01.js
 document.addEventListener('DOMContentLoaded', () => {
-    const { CartKeys, loadCart, saveCart, afterPageCartChange } = window.CartUtils;
-
-    // const purchaseButton = document.getElementById('purchaseButton');
+    const purchaseButton = document.getElementById('purchaseButton');
     const cartBody = document.querySelector('.cart-table tbody');
     const modal = document.getElementById('image-modal');
     const modalImg = document.getElementById('modal-img');
     const modalInfo = document.getElementById('modal-info');
     const closeBtn = document.querySelector('.close-btn');
+    let cart = [];
 
-    // Carrega carrinho persistido da Página 01
-    // const CURRENT_PAGE_KEY = CartKeys.page01;
-    const CURRENT_PAGE_KEY = CartKeys.c34fes4fc;
-    let cart = loadCart(CURRENT_PAGE_KEY);
-    
-
-    // Lista de produtos da Página 01 (mantenha/complete conforme sua página)
+    // Lista completa de produtos
     const products = {
         1: { name: 'JOGO DE VEDACOES - 4FC/4FES', image: 'images/1 - Gasket set.png', description: 'Peça de vedação para compressores.' },
         // 2: { name: 'Built-in motor', image: 'images/2 - Built-in motor.png', description: 'Motor embutido para alta performance.' },
@@ -86,170 +102,142 @@ document.addEventListener('DOMContentLoaded', () => {
         140: { name: 'Cylinder liner - right', image: 'images/140 - Cylinder liner - right.png', description: 'Descrição do item.' }
     };
 
-
-  function renderCart() {
-    cartBody.innerHTML = '';
-    cart.forEach(item => {
-      const row = document.createElement('tr');
-      row.innerHTML = `
-        <td>Item ${item.id}, ${item.name}</td>
-        <td>
-          <div class="quantity-controls">
-            <button class="decrease" data-id="${item.id}">-</button>
-            <span>${item.quantity}</span>
-            <button class="increase" data-id="${item.id}">+</button>
-          </div>
-        </td>
-        <td>
-          ${item.image}
-        </td>
-      `;
-      cartBody.appendChild(row);
-    });
-
-    // Persistir e sincronizar master
-    saveCart(CURRENT_PAGE_KEY, cart);
-    afterPageCartChange();
-  }
-
-  function addToCart(id) {
-    const prod = products[id];
-    if (!prod) return; // segurança caso id não exista
-    const existing = cart.find(item => item.id === id);
-    if (existing) {
-      existing.quantity++;
-    } else {
-      cart.push({ id, name: prod.name, image: prod.image, quantity: 1 });
+    function renderCart() {
+        cartBody.innerHTML = '';
+        cart.forEach(item => {
+            const row = document.createElement('tr');
+            row.innerHTML = `
+                <td>Item ${item.id}, ${item.name}</td>
+                <td>
+                    <div class="quantity-controls">
+                        <button class="decrease" data-id="${item.id}">-</button>
+                        <span>${item.quantity}</span>
+                        <button class="increase" data-id="${item.id}">+</button>
+                    </div>
+                </td>
+                <td>
+                    <img src="${item.image}" alt="${item.name}" class="cart-img" data-id="${item.id}" style="width:80px;height:80px;object-fit:cover;cursor:pointer;">
+                </td>
+            `;
+            cartBody.appendChild(row);
+        });
     }
-    renderCart();
-  }
 
-  // Botões de "Adicionar" nas listagens
-  document.querySelectorAll('.add-product').forEach(link => {
-    link.addEventListener('click', (e) => {
-      e.preventDefault();
-      const id = parseInt(link.dataset.id, 10);
-      addToCart(id);
-    });
-  });
-
-  // Controles de quantidade no carrinho
-  cartBody.addEventListener('click', (e) => {
-    if (e.target.classList.contains('increase')) {
-      const id = parseInt(e.target.dataset.id, 10);
-      const item = cart.find(i => i.id === id);
-      if (item) {
-        item.quantity++;
-        renderCart();
-      }
-    }
-    if (e.target.classList.contains('decrease')) {
-      const id = parseInt(e.target.dataset.id, 10);
-      const item = cart.find(i => i.id === id);
-      if (item) {
-        if (item.quantity > 1) {
-          item.quantity--;
+    function addToCart(id) {
+        const { name, image } = products[id];
+        const existing = cart.find(item => item.id === id);
+        if (existing) {
+            existing.quantity++;
         } else {
-          cart = cart.filter(i => i.id !== id);
+            cart.push({ id, name, image, quantity: 1 });
         }
         renderCart();
-      }
     }
-  });
 
-  // Modal de imagem
-  document.addEventListener('click', (e) => {
-    if (e.target.classList.contains('cart-img')) {
-      const id = parseInt(e.target.dataset.id, 10);
-      const product = products[id];
-      if (!product) return;
-      modalImg.src = product.image;
-      modalInfo.textContent = `${product.name} | ${product.description} | 4FES-3/4FES-5/4FC-3.2/4FC-5.2`;
-      modal.style.display = 'flex';
-    }
-  });
+    // Adiciona evento para todos os links com classe .add-product
+    document.querySelectorAll('.add-product').forEach(link => {
+        link.addEventListener('click', (e) => {
+            e.preventDefault();
+            const id = parseInt(link.dataset.id);
+            addToCart(id);
+        });
+    });
 
-  // Fechar modal
-  closeBtn?.addEventListener('click', () => {
-    modal.style.display = 'none';
-  });
+    cartBody.addEventListener('click', (e) => {
+        if (e.target.classList.contains('increase')) {
+            const id = parseInt(e.target.dataset.id);
+            const item = cart.find(i => i.id === id);
+            item.quantity++;
+            renderCart();
+        }
+        if (e.target.classList.contains('decrease')) {
+            const id = parseInt(e.target.dataset.id);
+            const item = cart.find(i => i.id === id);
+            if (item.quantity > 1) {
+                item.quantity--;
+            } else {
+                cart = cart.filter(i => i.id !== id);
+            }
+            renderCart();
+        }
+    });
 
-  modal?.addEventListener('click', (e) => {
-    if (e.target === modal) modal.style.display = 'none';
-  });
+    // Abrir modal ao clicar na imagem
+    document.addEventListener('click', (e) => {
+        if (e.target.classList.contains('cart-img')) {
+            const id = parseInt(e.target.dataset.id);
+            const product = products[id];
+            modalImg.src = product.image;
+            modalInfo.textContent = `${product.name} | ${product.description} | 4FES-3/4FES-5/4FC-3.2/4FC-5.2`;
+            modal.style.display = 'flex';
+        }
+    });
 
-  // Render inicial a partir do localStorage
-  renderCart();
+    // Inicio Fechar modal
+    closeBtn.addEventListener('click', () => {
+        modal.style.display = 'none';
+    });
 
-  // Recarrega carrinho da página e re-renderiza(para todas as paginas de produtos)
-  window.addEventListener('cartUpdated', () => {
-    cart = CartUtils.loadCart(CURRENT_PAGE_KEY);
-    renderCart();
-  });
+    modal.addEventListener('click', (e) => {
+        if (e.target === modal) {
+            modal.style.display = 'none';
+        }
+    });
+    // Fim Fechar modal
+
+
+
+/*==============  Inicio function para chamar o modal de preenchimento de dados e enviar o pedido  ============== */
+
+    purchaseButton.addEventListener('click', () => {
+        if (cart.length === 0) {
+            alert('Seu carrinho está vazio!');
+        } else {
+            // Exibe modal para dados do cliente
+            document.getElementById('checkout-modal').style.display = 'flex';
+        }
+    });
+
+    // Fechar modal ao clicar em "Cancelar"
+    
+    document.getElementById('close-checkout').addEventListener('click', () => {
+        document.getElementById('checkout-modal').style.display = 'none';
+    });
+
+
+    // apos os dados preenchidos envia a lista de compras por email
+    document.getElementById('confirm-checkout').addEventListener('click', () => {
+        const name = document.getElementById('user-name').value.trim();
+        const email = document.getElementById('user-email').value.trim();
+        const phone = document.getElementById('user-phone').value.trim();
+
+        if (!name || !email || !phone) {
+            alert('Por favor, preencha todos os campos!');
+            return;
+        }
+
+        const itemsList = cart.map(item => `Item: ${item.id} | Produto: ${item.name} | Qtd: ${item.quantity}`).join('\n');
+        const message = `Dados do cliente:\nNome: ${name}\nE-mail: ${email}\nTelefone: ${phone}\n\nPedido:\n${itemsList}`;
+
+
+        // assunto do e-mail
+        // const mailtoLink = `mailto:diegojfsr@gmail.com?subject=Novo Pedido - ${encodeURIComponent(name)}&body=${encodeURIComponent(message)}`;
+        // window.location.href = mailtoLink;
+
+        const whatsappNumber = '5521967208702'; 
+        const whatsappLink = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
+        window.open(whatsappLink, '_blank');
+
+        // Limpa carrinho e fecha modal
+        cart = [];
+        localStorage.removeItem('cart');
+        renderCart();
+        document.getElementById('checkout-modal').style.display = 'none';
+    });
+
+    /*==============  Final function para chamar o modal de preenchimento de dados e enviar o pedido  ============== */
+
+
+
 });
-/*=== Final function para adicionar produtos no carrinho lateral ==== */
-
-/*=== Inicio function Modal do carrinho master ==== */
-const cartBtn = document.getElementById('cart-btn');
-const masterModal = document.getElementById('master-modal');
-const masterModalBody = document.getElementById('master-modal-body');
-const closeMasterModalBtn = masterModal.querySelector('.close-btn');
-
-cartBtn.addEventListener('click', () => {
-  renderMasterModal();
-  masterModal.style.display = 'flex';
-});
-
-function renderMasterModal() {
-  const master = CartUtils.loadCart(CartUtils.CartKeys.master);
-  masterModalBody.innerHTML = '';
-  if (master.length === 0) {
-    masterModalBody.innerHTML = '<p>Carrinho master está vazio.</p>';
-    return;
-  }
-  master.forEach(item => {
-    const div = document.createElement('div');
-    div.className = 'master-item';
-    div.innerHTML = `
-      <p>${item.name} (${item.page})</p>
-      ${item.image}
-      <div class="quantity-controls">
-        <button class="decrease" data-id="${item.id}" data-page="${item.page}">-</button>
-        <span>${item.quantity}</span>
-        <button class="increase" data-id="${item.id}" data-page="${item.page}">+</button>
-      </div>
-    `;
-    masterModalBody.appendChild(div);
-  });
-}
-
-// Eventos para aumentar/diminuir quantidade
-masterModal.addEventListener('click', (e) => {
-  if (e.target.classList.contains('increase') || e.target.classList.contains('decrease')) {
-    const id = parseInt(e.target.dataset.id);
-    const page = e.target.dataset.page;
-    const master = CartUtils.loadCart(CartUtils.CartKeys.master);
-    const item = master.find(i => i.id === id && i.page === page);
-    if (!item) return;
-    const newQty = e.target.classList.contains('increase') ? item.quantity + 1 : item.quantity - 1;
-    CartUtils.applyChangeFromMaster(id, page, newQty);
-    renderMasterModal();
-
-    // Dispara evento para atualizar carrinhos nas páginas
-    window.dispatchEvent(new Event('cartUpdated'));
-  }
-});
-
-// Fechar modal
-closeMasterModalBtn.addEventListener('click', () => {
-  masterModal.style.display = 'none';
-  
-});
-
-masterModal.addEventListener('click', (e) => {
-  if (e.target === masterModal) masterModal.style.display = 'none';
-});
-/*=== Final function Modal do carrinho master ==== */
-
-
 

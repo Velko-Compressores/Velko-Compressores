@@ -28,7 +28,6 @@
 
   <!-- custom js file link  -->
   <script src="js/script.js" defer></script>
-  <script src="js/cart-utils.js" defer></script>
 
 </head>
 <body>
@@ -46,7 +45,6 @@
                 <li><a href="../../index.html#blogs">SERVIÇOS</a></li>
                 <li><a href="../../index.html#products">PRODUTOS</a></li>
                 <li><a href="../../index.html#contact">CONTATO</a></li>
-                <!-- <li><a href="masterCart.html">CartMaster</a></li> -->
             </ul>
         </nav>
 
@@ -62,7 +60,7 @@
   <section class="about" id="about">
     <div class="row">
       <article class="content">
-          <h2 class="section-title">4FES-3/4FES-5/4FC-3.2/4FC-5.2</h2>
+          <h2 class="section-title">Itens 4EES-4/4EES-6/4EC-4.2/4EC-6.2</h2>
           <div class="table-wrapper" role="region" aria-label="Tabela de itens">
               <table class="cart-table" role="table">
                   <thead>
@@ -77,9 +75,9 @@
                   </tbody>
               </table>
           </div>
-          <!-- <button type="button" class="btn" id="purchaseButton" aria-label="Adicionar itens ao carrinho">
+          <button type="button" class="btn" id="purchaseButton" aria-label="Adicionar itens ao carrinho">
               Adicionar ao Carrinho
-          </button> -->
+          </button>
       </article>
 
       <div class="svg-wrapper">
@@ -899,14 +897,31 @@
   </section> <!-- Final div class about -->
 
 
-  <!-- Inicio Modal Carrinho Master -->
-<div id="master-modal" class="modal">
-  <div class="modal-content">
-    <h2>Itens no Carrinho</h2>
-    <div id="master-modal-body"></div>
-      <a href="masterCart.html" class="btn">Finalizar Compra</a>
-    <button class="close-btn">Fechar</button>
+  <!-- Inicio Modal -->
+  <div id="image-modal" class="modal">
+    <div class="modal-content">
+      <span class="close-btn">&times;</span>
+      <img id="modal-img" src="" alt="">
+      <p id="modal-info"></p>
+    </div>
   </div>
+  <!-- Final Modal -->
+
+
+  <!-- Modal de Finalizar Compra -->
+<!-- Modal para dados do cliente -->
+
+<div id="checkout-modal">
+    <div class="modal-content">
+        <h3>Finalizar Compra</h3>
+        <input type="text" id="user-name" placeholder="Nome">
+        <input type="email" id="user-email" placeholder="E-mail">
+        <input type="tel" id="user-phone" placeholder="Telefone">
+        <div style="display:flex; justify-content:space-between;">
+            <button id="confirm-checkout">Enviar Pedido</button>
+            <button id="close-checkout">Cancelar</button>
+        </div>
+    </div>
 </div>
   <!-- Final Modal -->
 
