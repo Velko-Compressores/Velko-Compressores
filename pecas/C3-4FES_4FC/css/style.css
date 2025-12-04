@@ -705,8 +705,7 @@ body{
 
 
 
-
-/* Modal do carrinho master */
+/* -- Inicio Stilo Modal do carrinho master -- */
 
 .modal {
   display: none;
@@ -734,7 +733,7 @@ body{
 
 
 
-
+/* -- Inicio Stilo Pagina Finalizar Compra -- */
 
 /* Título principal */
 h1 {

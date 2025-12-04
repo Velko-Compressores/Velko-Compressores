@@ -189,6 +189,7 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 /*=== Final function para adicionar produtos no carrinho lateral ==== */
 
+
 /*=== Inicio function Modal do carrinho master ==== */
 const cartBtn = document.getElementById('cart-btn');
 const masterModal = document.getElementById('master-modal');

@@ -28,6 +28,8 @@
 
   <!-- custom js file link  -->
   <script src="assets/js/script.js" defer></script>
+  <script src="assets/js/cart-utils.js" defer></script>
+  <!-- <script src="assets/js/master.js" defer></script> -->
 
 </head>
 <body>
@@ -56,6 +58,17 @@
         </div>
     </header>
 <!-- Final Header Section  -->
+
+  <!-- Inicio Modal Carrinho Master -->
+    <div id="master-modal" class="modal">
+    <div class="modal-content">
+        <h2>Itens no Carrinho</h2>
+        <div id="master-modal-body"></div>
+        <a href="assets/pages/masterCart.html" class="btn">Finalizar Compra</a>
+        <button class="close-btn">Fechar</button>
+    </div>
+    </div>
+  <!-- Final Modal -->
 
 
 <!-- Inicio Home Section  -->
@@ -328,8 +341,6 @@
 </section>
 
 <!-- Final Contact Section -->
-
-
 
 <!-- Inicio Botão Flutuante do WhatsApp -->
 <a href="https://wa.me/552125946544?text=Olá! Gostaria de saber mais sobre os produtos da Velko Compressores." 
