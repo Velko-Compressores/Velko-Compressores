@@ -273,7 +273,7 @@ body{
 ========================= */
 
 .table-wrapper {
-    max-height: 500px; /* altura fixa para a área da tabela */
+    max-height: 700px; /* altura fixa para a área da tabela */
     overflow-y: auto; /* rolagem interna */
     margin-bottom: 20px;
     border-radius: 6px;
@@ -573,7 +573,8 @@ body{
 /* -- Final Botão Flutuante do WhatsApp Section Section  -- */
 
 
-/*===  Inicio Modal === */
+
+/*===  Inicio Modal Imagem produto expandida === */
 
 .modal {
     position: fixed;
