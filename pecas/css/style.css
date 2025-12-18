@@ -47,19 +47,6 @@ body{
     background: var(--cor-branco);
 }
 
-
-section{
-    padding:5rem 7%;
-}
-
-.heading{
-    text-align: center;
-    color:var(--cor-azul1);
-    text-transform: uppercase;
-    padding-bottom: 3.5rem;
-    font-size: 4rem;
-}
-
 .heading span{
     color:var(--cor-azul2);
     text-transform: uppercase;
@@ -298,43 +285,32 @@ section{
 /* -- Final Header Section  -- */
 
 
-
-/*===  Inicio Container Section  === */
-
-.container {
-    /* padding-top: 200px; */
-    height: 80vh;
-    width: auto;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+/* === Inicio Section Home Compressor Remanufaturado ==== */
+.home-compressor-remanufaturado {
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* centraliza horizontalmente */
+  align-items: center;     /* centraliza verticalmente */
+  padding-top: 150px;
+  height: 100vh;           /* ocupa 100% da altura da tela */
+  width: 100vw;            /* ocupa 100% da largura da tela */
+  overflow: hidden;
 }
 
-
-#image-container {
-    /* padding-top: 50px; */
-    background-color: #fdfdfd;
-    width: 90vw;
-    height: 80vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    overflow: hidden;
-    position: relative;
+.content-compressor-remanufaturado {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 #tabela-img {
-    padding-top: 180PX;
-    max-width: 90rem;
-    max-height: 90rem;
-    height: auto;
-    width: auto;
-    display: block;
-    touch-action: none;
+  max-width: 100%;
+  max-height: 100%;
 }
 
-/* -- Final Container Section  -- */
-
+/* === Final Section Home Compressor Remanufaturado ==== */
 
 /*===  Inicio Footer Section === */
 
@@ -423,81 +399,3 @@ section{
 }
 
 /* -- Final Botão Flutuante do WhatsApp Section Section  -- */
-
-
-/*===  Inicio do modal para escolher o modelo do motor === */
-
-.modal {
-  display: none;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.6);
-  justify-content: center;
-  align-items: center;
-  animation: fadeIn 0.3s ease-in-out;
-}
-
-.modal-content {
-  position: relative; /* Adicionado */
-  background: #fff;
-  padding: 25px;
-  border-radius: 12px;
-  width: 90%;
-  max-width: 400px;
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
-  text-align: center;
-  animation: slideDown 0.4s ease;
-}
-
-.modal-content h2 {
-    font-size: 25px;
-    margin-bottom: 15px;
-    color: var(--cor-azul1);
-}
-
-.close {
-  position: absolute;
-  top: 15px;
-  right: 20px;
-  font-size: 24px;
-  font-weight: bold;
-  color: var(--cor-azul1);
-  cursor: pointer;
-}
-
-#modal-links a {
-  display: block;
-  margin: 10px 0;
-  padding: 10px;
-  background-color: var(--cor-azul1);
-  color: #fff;
-  font-size: 25px;
-  text-decoration: none;
-  border-radius: 6px;
-  transition: background-color 0.3s ease;
-}
-
-#modal-links a:hover {
-  background-color: var(--cor-azul2);
-}
-
-@keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
-}
-
-@keyframes slideDown {
-  from { transform: translateY(-50px); opacity: 0; }
-  to { transform: translateY(0); opacity: 1; }
-}
-
-/* Responsividade */
-@media (max-width: 480px) {
-  .modal-content {
-    width: 95%;
-    padding: 20px;
-  }
-}
